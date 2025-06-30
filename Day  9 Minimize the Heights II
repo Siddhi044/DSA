@@ -24,7 +24,6 @@ class Solution {
                 int[] arr = {12,6,4,15,17,10};
                 int ans = getMinDiff(arr,k);
                 System.out.println(ans);
-            
-        
+              
     }
 }
