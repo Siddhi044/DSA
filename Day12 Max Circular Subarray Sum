@@ -1,0 +1,25 @@
+You are given a circular array arr[] of integers, find the maximum possible sum of a subarray. In a circular array, the subarray can start at the end and wrap around to the beginning. Return the maximum subarray sum considering both non-wrapping and wrapping cases.
+
+class Solution {
+    static int circularSubarraySum(int arr[]) {
+        int n = arr.length;
+        int res = arr[0];
+        
+        for(int i = 0; i < n; i++){
+            int SubSum = 0;
+            for( int j = 0; j<n;j++){
+                int idx = (i +j)% n;
+                SubSum = SubSum + arr[idx];
+                res = Math.max(res, SubSum);
+            }
+        }
+        return res;
+        
+        
+    }
+    public static void mai(String[] args){
+        int[] arr = {8, -8, 9, -9,10,-11,12};
+        
+        System.out.println(circularSubarraySum(arr));
+    }
+}
